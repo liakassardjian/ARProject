@@ -1,19 +1,22 @@
 //
 //  ConteudosTableViewController.swift
-//  RealHistory
+//  testeSceneKit
 //
-//  Created by Lia Kassardjian on 19/10/19.
+//  Created by Lia Kassardjian on 20/10/19.
 //  Copyright © 2019 Lia Kassardjian. All rights reserved.
 //
 
 import UIKit
 
 class ConteudosTableViewController: UITableViewController {
-    
-    let conteudos = ["Egito Antigo", "Revolução Francesa"]
 
+    let conteudos = ["Revolução Francesa"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
@@ -30,8 +33,12 @@ class ConteudosTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "conteudo", for: indexPath)
 
         cell.textLabel?.text = conteudos[indexPath.row]
-        
+
         return cell
+    }
+    
+    @IBAction func voltarMenu(_ sender: UIStoryboardSegue) {
+        // dismiss
     }
 
     /*

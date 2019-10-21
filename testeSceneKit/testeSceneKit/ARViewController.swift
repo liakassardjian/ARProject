@@ -1,27 +1,34 @@
 //
-//  ARViewController.swift
-//  RealHistory
+//  ViewController.swift
+//  testeSceneKit
 //
-//  Created by Lia Kassardjian on 19/10/19.
+//  Created by Lia Kassardjian on 20/10/19.
 //  Copyright © 2019 Lia Kassardjian. All rights reserved.
 //
 
 import UIKit
+import SceneKit
 import ARKit
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var inicioLabel: UILabel!
+    @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
-        
         // Set the view's delegate
         sceneView.delegate = self
+        
+        // Create a new scene
+        let scene = SCNScene(named: "art.scnassets/box.scn")!
+        
+        // Set the scene to the view
+        sceneView.scene = scene
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +39,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         guard let arImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
         configuration.trackingImages = arImages
-        
+
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -43,17 +50,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-    
+
+    // MARK: - ARSCNViewDelegate
+   
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        
+        DispatchQueue.main.async {
+            self.inicioLabel.isHidden = true
+        }
+        
         guard anchor is ARImageAnchor else { return }
         
-        let container = SCNNode(geometry: SCNPlane(width: 10, height: 10))
-        container.position = SCNVector3(0, 0, 0)
-
-        container.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-
-        sceneView.scene.rootNode.addChildNode(container)
+        // Container
+        guard let container = sceneView.scene.rootNode.childNode(withName: "container", recursively: false) else { return }
+        container.removeFromParentNode()
+        node.addChildNode(container)
+        container.isHidden = false
     }
-    
-
 }
