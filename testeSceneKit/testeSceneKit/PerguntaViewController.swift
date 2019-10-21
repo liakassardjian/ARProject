@@ -37,8 +37,9 @@ class PerguntaViewController: UIViewController {
         
         respostaView.layer.opacity = 0
         
-        for b in alternativasButton {
-            b.layer.cornerRadius = 8
+        for b in 0..<alternativasButton.count {
+            alternativasButton[b].layer.cornerRadius = 8
+            alternativasButton[b].titleLabel?.text = pergunta.alternativas[b]
         }
     }
     

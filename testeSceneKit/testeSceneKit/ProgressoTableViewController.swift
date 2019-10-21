@@ -31,7 +31,7 @@ class ProgressoTableViewController: UITableViewController {
 
         cell.topicoLabel.text = capitulos[indexPath.row].nome
         cell.progressoLabel.text = String("\(capitulos[indexPath.row].progresso)%")
-        cell.barraProgressoView.progressValue = CGFloat(capitulos[indexPath.row].progresso/capitulos[indexPath.row].perguntas.count)
+        cell.barraProgressoView.progressValue = CGFloat(capitulos[indexPath.row].progresso) / 100.0
 
         return cell
     }
