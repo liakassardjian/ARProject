@@ -21,6 +21,7 @@ class PerguntaViewController: UIViewController {
     @IBOutlet weak var perguntaLabel: UILabel!
     @IBOutlet var alternativasButton: [UIButton]!
     
+    var capitulo: Capitulo?
     var pergunta: Pergunta?
 //
 //    var resposta: Int = 0
@@ -52,6 +53,9 @@ class PerguntaViewController: UIViewController {
                 b.isUserInteractionEnabled = false
             }
             
+            pergunta?.acertada = true
+            capitulo?.calculaProgresso()
+            
         } else {
             botao.backgroundColor = .systemRed
             respostaLabel.text = "Resposta incorreta"
@@ -68,6 +72,7 @@ class PerguntaViewController: UIViewController {
             })
         })
     }
+    
     
 
 }

@@ -11,8 +11,9 @@ import UIKit
 class ConteudosTableViewController: UITableViewController {
 
     let capitulos = [Capitulo(nome: "Revolução Francesa",
-                              perguntas: [Pergunta(titulo: "Pergunta 1", texto: "O que?", alternativas: ["a", "b", "c", "d"], resposta: 2),
-                                        Pergunta(titulo: "Pergunta 2", texto: "Onde", alternativas: ["e", "f", "g", "h"], resposta: 3)])]
+                              perguntas:
+        [Pergunta(titulo: "Pergunta 1", texto: "Quando ocorreu a queda da Bastilha?", alternativas: ["14 de julho de 1915", "14 de julho de 1789", "14 de janeiro de 1803", "14 de junho de 1412"], resposta: 2),
+         Pergunta(titulo: "Pergunta 2", texto: "Qual era o lema da Revolução Francesa?", alternativas: ["Liberdade, Igualdade e Fraternidade", "Ordem de Progresso", "Independência e Virtude", "Desenvolvimento, progresso e liberdade"], resposta: 3)])]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,10 @@ class ConteudosTableViewController: UITableViewController {
             if let selecionado = tableView.indexPathForSelectedRow {
                 arVC.capitulo = self.capitulos[selecionado.row]
             }
+        }
+        
+        if let progresso = segue.destination as? ProgressoTableViewController {
+            progresso.capitulos = self.capitulos
         }
     }
 }

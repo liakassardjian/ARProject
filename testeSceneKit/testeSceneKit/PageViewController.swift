@@ -85,6 +85,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
             guard let pergunta = capitulo?.perguntas[i] else { return }
             
             vc.pergunta = pergunta
+            vc.capitulo = capitulo
         }
     }
     

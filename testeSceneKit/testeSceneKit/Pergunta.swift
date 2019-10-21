@@ -13,11 +13,13 @@ class Pergunta {
     var texto: String
     var alternativas:[String]
     var resposta: Int
+    var acertada: Bool
     
     init(titulo: String, texto: String, alternativas: [String], resposta: Int) {
         self.titulo = titulo
         self.texto = texto
         self.alternativas = alternativas
         self.resposta = resposta
+        self.acertada = false
     }
 }
