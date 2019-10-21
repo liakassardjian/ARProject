@@ -10,7 +10,9 @@ import UIKit
 
 class ConteudosTableViewController: UITableViewController {
 
-    let conteudos = ["Revolução Francesa"]
+    let capitulos = [Capitulo(nome: "Revolução Francesa",
+                              perguntas: [Pergunta(titulo: "Pergunta 1", texto: "O que?", alternativas: ["a", "b", "c", "d"], resposta: 2),
+                                        Pergunta(titulo: "Pergunta 2", texto: "Onde", alternativas: ["e", "f", "g", "h"], resposta: 3)])]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +28,13 @@ class ConteudosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return conteudos.count
+        return capitulos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "conteudo", for: indexPath)
 
-        cell.textLabel?.text = conteudos[indexPath.row]
+        cell.textLabel?.text = capitulos[indexPath.row].nome
 
         return cell
     }
@@ -41,14 +43,11 @@ class ConteudosTableViewController: UITableViewController {
         // dismiss
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let arVC = segue.destination as? ARViewController {
+            if let selecionado = tableView.indexPathForSelectedRow {
+                arVC.capitulo = self.capitulos[selecionado.row]
+            }
+        }
     }
-    */
-
 }

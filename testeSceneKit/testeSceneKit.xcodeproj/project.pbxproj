@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E47ED557235D440500DED8FF /* BarraProgressoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED556235D440500DED8FF /* BarraProgressoView.swift */; };
+		E47ED559235D452C00DED8FF /* ProgressoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED558235D452C00DED8FF /* ProgressoTableViewCell.swift */; };
+		E47ED55B235D459500DED8FF /* Capitulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED55A235D459500DED8FF /* Capitulo.swift */; };
+		E47ED55D235D460000DED8FF /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED55C235D460000DED8FF /* Pergunta.swift */; };
 		E49B19EE235C9B0800B5E141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B19ED235C9B0800B5E141 /* AppDelegate.swift */; };
 		E49B19F0235C9B0800B5E141 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E49B19EF235C9B0800B5E141 /* art.scnassets */; };
 		E49B19F2235C9B0800B5E141 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B19F1235C9B0800B5E141 /* ARViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E47ED556235D440500DED8FF /* BarraProgressoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarraProgressoView.swift; sourceTree = "<group>"; };
+		E47ED558235D452C00DED8FF /* ProgressoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressoTableViewCell.swift; sourceTree = "<group>"; };
+		E47ED55A235D459500DED8FF /* Capitulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitulo.swift; sourceTree = "<group>"; };
+		E47ED55C235D460000DED8FF /* Pergunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		E49B19EA235C9B0800B5E141 /* testeSceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testeSceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49B19ED235C9B0800B5E141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49B19EF235C9B0800B5E141 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 				E49EAA61235D153D0033036F /* PageViewController.swift */,
 				E49EAA63235D192F0033036F /* QuestionarioViewController.swift */,
 				E49EAA65235D1AC90033036F /* PerguntaViewController.swift */,
+				E47ED556235D440500DED8FF /* BarraProgressoView.swift */,
+				E47ED558235D452C00DED8FF /* ProgressoTableViewCell.swift */,
+				E47ED55A235D459500DED8FF /* Capitulo.swift */,
+				E47ED55C235D460000DED8FF /* Pergunta.swift */,
 			);
 			path = testeSceneKit;
 			sourceTree = "<group>";
@@ -152,11 +164,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49B19F2235C9B0800B5E141 /* ARViewController.swift in Sources */,
+				E47ED557235D440500DED8FF /* BarraProgressoView.swift in Sources */,
 				E49EAA64235D192F0033036F /* QuestionarioViewController.swift in Sources */,
 				E49EAA66235D1AC90033036F /* PerguntaViewController.swift in Sources */,
 				E49B19EE235C9B0800B5E141 /* AppDelegate.swift in Sources */,
 				E49B1A02235CA5A400B5E141 /* ConteudosTableViewController.swift in Sources */,
+				E47ED559235D452C00DED8FF /* ProgressoTableViewCell.swift in Sources */,
+				E47ED55B235D459500DED8FF /* Capitulo.swift in Sources */,
 				E49EAA62235D153D0033036F /* PageViewController.swift in Sources */,
+				E47ED55D235D460000DED8FF /* Pergunta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

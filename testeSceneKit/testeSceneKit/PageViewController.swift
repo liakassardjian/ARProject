@@ -10,13 +10,18 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
-    let titulos = ["Pergunta 1", "Pergunta 2"]
-    let perguntas = ["Qual foi o evento que deu início à Revolução Francesa?", "Onde nasceu Napoleão Bonaparte?"]
-    let respostas = [1, 3]
+    var capitulo: Capitulo?
     
     lazy var ordemViewControllers: [UIViewController] = {
-        return [self.novaVC(viewController: "pergunta"),
-                self.novaVC(viewController: "pergunta")]
+        var controllers: [UIViewController] = []
+        
+        guard let perguntas = self.capitulo?.perguntas else { return [UIViewController()] }
+        
+        for p in perguntas {
+            controllers.append(self.novaVC(viewController: "pergunta"))
+        }
+        
+        return controllers
     }()
     
     var indexAtual = 0
@@ -77,10 +82,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     func popularViews() {
         for i in 0..<ordemViewControllers.count {
             guard let vc = ordemViewControllers[i] as? PerguntaViewController else { return }
+            guard let pergunta = capitulo?.perguntas[i] else { return }
             
-            vc.titulo = titulos[i]
-            vc.pergunta = perguntas[i]
-            vc.resposta = respostas[i]
+            vc.pergunta = pergunta
         }
     }
     

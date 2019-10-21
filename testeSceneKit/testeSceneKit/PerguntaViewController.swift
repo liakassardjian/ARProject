@@ -21,15 +21,18 @@ class PerguntaViewController: UIViewController {
     @IBOutlet weak var perguntaLabel: UILabel!
     @IBOutlet var alternativasButton: [UIButton]!
     
-    var resposta: Int = 0
-    var titulo: String = ""
-    var pergunta: String = ""
+    var pergunta: Pergunta?
+//
+//    var resposta: Int = 0
+//    var titulo: String = ""
+//    var pergunta: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tituloLabel.text = titulo
-        perguntaLabel.text = pergunta
+        guard let pergunta = pergunta else { return }
+        tituloLabel.text = pergunta.titulo
+        perguntaLabel.text = pergunta.texto
         
         respostaView.layer.opacity = 0
         
@@ -40,7 +43,7 @@ class PerguntaViewController: UIViewController {
     
     @IBAction func selecionarBotao(_ sender: Any) {
         guard let botao = sender as? UIButton else { return }
-        if botao.tag == resposta {
+        if botao.tag == pergunta?.resposta {
             botao.backgroundColor = .systemGreen
             respostaLabel.text = "Resposta correta"
             respostaImagem.image = UIImage(named: "correto")

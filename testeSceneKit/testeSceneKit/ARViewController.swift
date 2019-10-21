@@ -15,6 +15,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var inicioLabel: UILabel!
     @IBOutlet var sceneView: ARSCNView!
     
+    var capitulo: Capitulo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,5 +68,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         container.removeFromParentNode()
         node.addChildNode(container)
         container.isHidden = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let questionario = segue.destination as? QuestionarioViewController {
+            questionario.capitulo = self.capitulo
+        }
     }
 }

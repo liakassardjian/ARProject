@@ -16,13 +16,15 @@ class QuestionarioViewController: UIViewController {
     var pageViewController: PageViewController?
     var horario:DateComponents?
     var primeiroTutorial:Bool = false
+    var capitulo: Capitulo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.anteriorButton.isHidden = true
         
-        pageControl.numberOfPages = 2
+        guard let perguntas = capitulo?.perguntas else { return }
+        pageControl.numberOfPages = perguntas.count
     }
     
     @IBAction func voltarPagina(_ sender: Any) {
@@ -74,6 +76,7 @@ class QuestionarioViewController: UIViewController {
         if let pVC = destino as? PageViewController {
             pageViewController = pVC
             pVC.questionarioViewController = self
+            pVC.capitulo = self.capitulo
         }
     }
 

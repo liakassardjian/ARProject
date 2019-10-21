@@ -84,8 +84,8 @@
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cx3-aK-tVM">
                                 <rect key="frame" x="131.5" y="798.5" width="151" height="37"/>
-                                <color key="pageIndicatorTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -189,7 +189,7 @@
                                             <action selector="selecionarBotao:" destination="jK6-a4-iEC" eventType="touchUpInside" id="kZN-EL-J9o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GX2-bP-amm">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GX2-bP-amm">
                                         <rect key="frame" x="215" y="512" width="179" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button">
@@ -216,7 +216,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="FjT-f9-bwr" secondAttribute="trailing" constant="8" id="16u-TD-XEo"/>
                                             <constraint firstItem="956-Qr-qiu" firstAttribute="top" secondItem="AYE-rB-xz0" secondAttribute="top" constant="8" id="Alq-6E-9It"/>
@@ -320,18 +320,105 @@
                             <outlet property="delegate" destination="lj4-vn-sJb" id="6ID-NA-DVG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Conteúdos" id="P0Y-9b-kfp"/>
+                    <navigationItem key="navigationItem" title="Conteúdos" id="P0Y-9b-kfp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Rvz-Ph-Pso">
+                            <connections>
+                                <segue destination="raX-dt-XPA" kind="show" id="lW1-GC-Zjs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAR-ms-yIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="761" y="423"/>
+        </scene>
+        <!--Progresso-->
+        <scene sceneID="F0h-DU-ouz">
+            <objects>
+                <tableViewController id="raX-dt-XPA" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xwa-28-5cS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="mCe-lC-H3M" customClass="ProgressoTableViewCell" customModule="testeSceneKit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="131"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCe-lC-H3M" id="TeR-cT-wb7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tópico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xh-tQ-9ij">
+                                            <rect key="frame" x="20" y="11" width="374" height="32"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% concluído" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-Ke-312">
+                                            <rect key="frame" x="20" y="51" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-sV-HbK" customClass="BarraProgressoView" customModule="testeSceneKit" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="80" width="374" height="36"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                    <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="targetColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                    <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                    <real key="value" value="11"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="progressValue">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2Gp-sV-HbK" secondAttribute="bottom" constant="4" id="280-g3-bJm"/>
+                                        <constraint firstItem="2Gp-sV-HbK" firstAttribute="trailing" secondItem="TeR-cT-wb7" secondAttribute="trailingMargin" id="2aS-y9-Iyo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9Xh-tQ-9ij" secondAttribute="trailing" id="4Vs-mD-dIe"/>
+                                        <constraint firstItem="9Xh-tQ-9ij" firstAttribute="top" secondItem="TeR-cT-wb7" secondAttribute="topMargin" id="Hu2-0B-9r4"/>
+                                        <constraint firstItem="2Gp-sV-HbK" firstAttribute="leading" secondItem="TeR-cT-wb7" secondAttribute="leadingMargin" id="Wd3-fq-f89"/>
+                                        <constraint firstItem="6oR-Ke-312" firstAttribute="leading" secondItem="TeR-cT-wb7" secondAttribute="leadingMargin" id="WoP-Xc-oSQ"/>
+                                        <constraint firstItem="6oR-Ke-312" firstAttribute="top" secondItem="9Xh-tQ-9ij" secondAttribute="bottom" constant="8" id="aIb-55-dfj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6oR-Ke-312" secondAttribute="trailing" id="djR-6B-zrv"/>
+                                        <constraint firstItem="9Xh-tQ-9ij" firstAttribute="leading" secondItem="TeR-cT-wb7" secondAttribute="leadingMargin" id="oDf-DJ-gOc"/>
+                                        <constraint firstItem="2Gp-sV-HbK" firstAttribute="top" secondItem="6oR-Ke-312" secondAttribute="bottom" constant="8" id="viJ-2v-Blc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barraProgressoView" destination="2Gp-sV-HbK" id="s1O-q9-vAB"/>
+                                    <outlet property="progressoLabel" destination="6oR-Ke-312" id="pPh-Wk-wJw"/>
+                                    <outlet property="topicoLabel" destination="9Xh-tQ-9ij" id="INz-oB-3AR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="raX-dt-XPA" id="0SP-uG-RdN"/>
+                            <outlet property="delegate" destination="raX-dt-XPA" id="hQy-MV-sOD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Progresso" largeTitleDisplayMode="never" id="aPF-aE-Mue"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pni-Vj-Cgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.86956521739137" y="1151.7857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yxd-vd-JMI">
             <objects>
                 <navigationController id="AvW-6H-hKT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="W1H-ef-ctz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="103.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
