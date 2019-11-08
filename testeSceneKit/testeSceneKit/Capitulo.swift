@@ -12,9 +12,11 @@ class Capitulo {
     var nome: String
     var perguntas: [Pergunta]
     var progresso: Int
+    var nomeAR: String
     
-    init(nome: String, perguntas: [Pergunta]) {
+    init(nome: String, nomeAR: String, perguntas: [Pergunta]) {
         self.nome = nome
+        self.nomeAR = nomeAR
         self.perguntas = perguntas
         self.progresso = 0
     }

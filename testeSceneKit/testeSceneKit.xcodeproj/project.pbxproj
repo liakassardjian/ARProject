@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E46A15FB236708BA00DC790E /* ConteudoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A15FA236708BA00DC790E /* ConteudoTableViewCell.swift */; };
 		E47ED557235D440500DED8FF /* BarraProgressoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED556235D440500DED8FF /* BarraProgressoView.swift */; };
 		E47ED559235D452C00DED8FF /* ProgressoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED558235D452C00DED8FF /* ProgressoTableViewCell.swift */; };
 		E47ED55B235D459500DED8FF /* Capitulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED55A235D459500DED8FF /* Capitulo.swift */; };
@@ -25,12 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E46A15FA236708BA00DC790E /* ConteudoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteudoTableViewCell.swift; sourceTree = "<group>"; };
 		E47ED556235D440500DED8FF /* BarraProgressoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarraProgressoView.swift; sourceTree = "<group>"; };
 		E47ED558235D452C00DED8FF /* ProgressoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressoTableViewCell.swift; sourceTree = "<group>"; };
 		E47ED55A235D459500DED8FF /* Capitulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitulo.swift; sourceTree = "<group>"; };
 		E47ED55C235D460000DED8FF /* Pergunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		E47ED55E235D4BCD00DED8FF /* ProgressoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressoTableViewController.swift; sourceTree = "<group>"; };
-		E49B19EA235C9B0800B5E141 /* testeSceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testeSceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49B19EA235C9B0800B5E141 /* Real History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49B19ED235C9B0800B5E141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49B19EF235C9B0800B5E141 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		E49B19F1235C9B0800B5E141 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		E49B19EB235C9B0800B5E141 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E49B19EA235C9B0800B5E141 /* testeSceneKit.app */,
+				E49B19EA235C9B0800B5E141 /* Real History.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,11 +78,11 @@
 			children = (
 				E49B19ED235C9B0800B5E141 /* AppDelegate.swift */,
 				E49B19EF235C9B0800B5E141 /* art.scnassets */,
-				E49B19F1235C9B0800B5E141 /* ARViewController.swift */,
 				E49B19F3235C9B0800B5E141 /* Main.storyboard */,
 				E49B19F6235C9B0B00B5E141 /* Assets.xcassets */,
 				E49B19F8235C9B0B00B5E141 /* LaunchScreen.storyboard */,
 				E49B19FB235C9B0B00B5E141 /* Info.plist */,
+				E49B19F1235C9B0800B5E141 /* ARViewController.swift */,
 				E49B1A01235CA5A400B5E141 /* ConteudosTableViewController.swift */,
 				E49EAA61235D153D0033036F /* PageViewController.swift */,
 				E49EAA63235D192F0033036F /* QuestionarioViewController.swift */,
@@ -90,6 +92,7 @@
 				E47ED55A235D459500DED8FF /* Capitulo.swift */,
 				E47ED55C235D460000DED8FF /* Pergunta.swift */,
 				E47ED55E235D4BCD00DED8FF /* ProgressoTableViewController.swift */,
+				E46A15FA236708BA00DC790E /* ConteudoTableViewCell.swift */,
 			);
 			path = testeSceneKit;
 			sourceTree = "<group>";
@@ -111,7 +114,7 @@
 			);
 			name = testeSceneKit;
 			productName = testeSceneKit;
-			productReference = E49B19EA235C9B0800B5E141 /* testeSceneKit.app */;
+			productReference = E49B19EA235C9B0800B5E141 /* Real History.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,6 +171,7 @@
 			files = (
 				E49B19F2235C9B0800B5E141 /* ARViewController.swift in Sources */,
 				E47ED557235D440500DED8FF /* BarraProgressoView.swift in Sources */,
+				E46A15FB236708BA00DC790E /* ConteudoTableViewCell.swift in Sources */,
 				E49EAA64235D192F0033036F /* QuestionarioViewController.swift in Sources */,
 				E49EAA66235D1AC90033036F /* PerguntaViewController.swift in Sources */,
 				E49B19EE235C9B0800B5E141 /* AppDelegate.swift in Sources */,
@@ -328,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liakassardjian.testeSceneKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Real History";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -346,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liakassardjian.testeSceneKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Real History";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

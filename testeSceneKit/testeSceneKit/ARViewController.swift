@@ -12,6 +12,11 @@ import ARKit
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
 
+    @IBOutlet weak var inicioView: UIView! {
+        didSet {
+            self.inicioView.layer.cornerRadius = 8
+        }
+    }
     @IBOutlet weak var inicioLabel: UILabel!
     @IBOutlet var sceneView: ARSCNView!
     
@@ -25,8 +30,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/box.scn")!
+        var scene: SCNScene
+        switch capitulo?.nomeAR {
+        case "revFrancesa":
+            scene = SCNScene(named: "art.scnassets/box.scn")!
+        case "egitoAntigo":
+            scene = SCNScene(named: "art.scnassets/pyramid.scn")!
+        default:
+            scene = SCNScene(named: "art.scnassets/box.scn")!
+        }
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -57,17 +69,41 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
-        DispatchQueue.main.async {
-            self.inicioLabel.isHidden = true
-        }
-        
         guard anchor is ARImageAnchor else { return }
         
+        if anchor.name != capitulo?.nomeAR {
+            DispatchQueue.main.async {
+                self.inicioLabel.text = "Esta imagem não corresponde a esse conteúdo. Posicione a imagem correta em frente à câmera"
+                self.inicioLabel.isHidden = false
+                self.inicioView.isHidden = false
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.inicioLabel.isHidden = true
+                self.inicioView.isHidden = true
+            }
+        }
+
         // Container
         guard let container = sceneView.scene.rootNode.childNode(withName: "container", recursively: false) else { return }
         container.removeFromParentNode()
         node.addChildNode(container)
         container.isHidden = false
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if anchor.name != capitulo?.nomeAR {
+            DispatchQueue.main.async {
+                self.inicioLabel.text = "Esta imagem não corresponde a esse conteúdo. Posicione a imagem correta em frente à câmera"
+                self.inicioLabel.isHidden = false
+                self.inicioView.isHidden = false
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.inicioLabel.isHidden = true
+                self.inicioView.isHidden = true
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

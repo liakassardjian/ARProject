@@ -20,13 +20,10 @@ class PerguntaViewController: UIViewController {
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var perguntaLabel: UILabel!
     @IBOutlet var alternativasButton: [UIButton]!
+    @IBOutlet var alternativasLabel: [UILabel]!
     
     var capitulo: Capitulo?
     var pergunta: Pergunta?
-//
-//    var resposta: Int = 0
-//    var titulo: String = ""
-//    var pergunta: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +36,7 @@ class PerguntaViewController: UIViewController {
         
         for b in 0..<alternativasButton.count {
             alternativasButton[b].layer.cornerRadius = 8
-            alternativasButton[b].titleLabel?.text = pergunta.alternativas[b]
+            alternativasLabel[b].text = pergunta.alternativas[b]
         }
     }
     

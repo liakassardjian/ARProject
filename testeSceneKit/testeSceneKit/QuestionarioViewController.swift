@@ -29,12 +29,9 @@ class QuestionarioViewController: UIViewController {
     
     @IBAction func voltarPagina(_ sender: Any) {
         if let index = pageViewController?.indexAtual {
-            switch index {
-            case 1:
+            if index > 0 {
                 pageViewController?.voltarPagina()
                
-            default:
-                break
             }
         }
         self.atualizaInterface()
@@ -42,12 +39,11 @@ class QuestionarioViewController: UIViewController {
     
     @IBAction func avancarPagina(_ sender: Any) {
         if let index = pageViewController?.indexAtual {
-            switch index {
-            case 0:
+            guard let tamanho = capitulo?.perguntas.count else { return }
+
+            if index < tamanho - 1 {
                 pageViewController?.avancarPagina()
                
-            default:
-                break
             }
         }
         self.atualizaInterface()
@@ -55,12 +51,18 @@ class QuestionarioViewController: UIViewController {
     
     func atualizaInterface() {
         if let index = pageViewController?.indexAtual {
+            guard let tamanho = capitulo?.perguntas.count else { return }
+            
             switch index {
             case 0:
                 anteriorButton.isHidden = true
                 proximoButton.isHidden = false
 
-            case 1:
+            case 1...tamanho-2:
+                anteriorButton.isHidden = false
+                proximoButton.isHidden = false
+                
+            case tamanho-1:
                 anteriorButton.isHidden = false
                 proximoButton.isHidden = true
 
